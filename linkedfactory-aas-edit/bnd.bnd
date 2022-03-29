@@ -1,0 +1,3 @@
+Bundle-SymbolicName: io.github.linkedfactory.aas.edit;singleton:=true
+Bundle-Activator: io.github.linkedfactory.aas.edit.AasEditPlugin$Implementation
+Bundle-ActivationPolicy: lazy

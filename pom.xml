@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>io.github.linkedfactory</groupId>
+	<artifactId>linkedfactory-tools-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>LinkedFactory: Tools</name>
+	<url>https://linkedfactory.github.io/</url>
+	<description>These are tools for working with AAS and OMP in a LinkedFactory environment.</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<organization>
+		<name>Fraunhofer IWU</name>
+		<url>https://www.iwu.fraunhofer.de/</url>
+	</organization>
+
+	<issueManagement>
+		<system>Github</system>
+		<url>https://github.com/linkedfactory/linkedfactory-tools/issues</url>
+	</issueManagement>
+
+	<developers>
+		<developer>
+			<id>kenwenzel</id>
+			<name>Ken Wenzel</name>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<url>https://github.com/kenwenzel</url>
+		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>Eclipse Public License v2.0</name>
+			<url>https://www.eclipse.org/legal/epl-2.0/</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>bnd-process</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.8.1</version>
+					<configuration>
+						<release>11</release>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.1.1</version>
+					<configuration>
+						<archive>
+							<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+						</archive>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>test-jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.2</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+
+				<plugin>
+					<groupId>biz.aQute.bnd</groupId>
+					<artifactId>bnd-maven-plugin</artifactId>
+					<version>4.3.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<exclude>.keep</exclude>
+				</excludes>
+			</resource>
+
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>META-INF/**</include>
+					<include>OSGI-INF/**</include>
+					<include>icons/**</include>
+					<include>schema/*.exsd</include>
+					<include>about.html</include>
+					<include>plugin.xml</include>
+					<include>plugin.properties</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+	<modules>
+		<module>linkedfactory-aas</module>
+		<module>linkedfactory-aas-edit</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>sonatype-releases</id>
+			<url>http://oss.sonatype.org/content/repositories/releases</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+</project>

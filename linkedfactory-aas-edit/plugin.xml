@@ -3,9 +3,9 @@
 <plugin>
 	<extension point="net.enilink.komma.edit.itemProviderAdapterFactories">
 		<factory
-				class="io.github.linkedfactory.edit.AasAdapterFactory"
+				class="io.github.linkedfactory.aas.edit.AasAdapterFactory"
 				supportedTypes="net.enilink.komma.edit.provider.IItemLabelProvider"
-				uri="http://komma.github.io/komma-examples/vocab/smarthome.ttl#">
+				uri="https://admin-shell.io/aas/3/0/RC01/">
 		</factory>
 	</extension>
 

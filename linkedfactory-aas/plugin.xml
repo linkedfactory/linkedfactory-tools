@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="net.enilink.komma.model.uriMapRules">
+		<rule
+				pattern="https://admin-shell.io/aas/3/0/RC01/"
+				priority="30"
+				replacement="platform:/plugin/io.github.linkedfactory.aas/rdf-ontology.ttl">
+		</rule>
+	</extension>
+</plugin>

@@ -21,8 +21,9 @@
 	<dependencies>
 		<dependency>
 			<groupId>io.admin-shell.aas</groupId>
-			<artifactId>model</artifactId>
-			<version>1.1.0</version>
+			<artifactId>dataformat-core</artifactId>
+			<version>1.2.1</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>net.enilink.komma</groupId>

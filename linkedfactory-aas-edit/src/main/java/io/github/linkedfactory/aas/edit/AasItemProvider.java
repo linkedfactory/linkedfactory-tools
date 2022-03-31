@@ -1,5 +1,6 @@
 package io.github.linkedfactory.aas.edit;
 
+import io.adminshell.aas.v3.model.Referable;
 import net.enilink.komma.common.adapter.IAdapterFactory;
 import net.enilink.komma.common.util.IResourceLocator;
 import net.enilink.komma.core.IEntity;
@@ -32,6 +33,17 @@ public class AasItemProvider extends ReflectiveItemProvider {
 	@Override
 	protected boolean childRequiresName(IResource subject, IReference property, Class rangeClass) {
 		return true;
+	}
+
+	@Override
+	public String getText(Object object) {
+		if (object instanceof Referable) {
+			String idShort = ((Referable)object).getIdShort();
+			if (idShort != null) {
+				return idShort;
+			}
+		}
+		return super.getText(object);
 	}
 
 	@Override

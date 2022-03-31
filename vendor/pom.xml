@@ -8,7 +8,6 @@
 		<groupId>io.github.linkedfactory</groupId>
 		<artifactId>linkedfactory-tools-parent</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../../..</relativePath>
 	</parent>
 
 	<artifactId>linkedfactory-vendor-bundles</artifactId>

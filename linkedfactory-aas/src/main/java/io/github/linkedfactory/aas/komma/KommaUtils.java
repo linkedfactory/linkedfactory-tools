@@ -13,7 +13,7 @@ public class KommaUtils {
 		KommaModule module = new KommaModule(KommaUtils.class.getClassLoader());
 		AasPropertyMapper propertyMapper = new AasPropertyMapper();
 		ReflectionHelper.ENUMS.forEach(enumClass -> {
-			module.addLiteralMapper(enumClass.getName(), new EnumLiteralMapper(enumClass));
+			module.addObjectMapper(enumClass, new EnumObjectMapper(enumClass));
 		});
 		Stream.concat(ReflectionHelper.INTERFACES.stream(),
 				ReflectionHelper.INTERFACES_WITHOUT_DEFAULT_IMPLEMENTATION.stream()).forEach(entityClass -> {

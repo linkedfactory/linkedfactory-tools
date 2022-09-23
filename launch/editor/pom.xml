@@ -15,7 +15,7 @@
 	<packaging>pom</packaging>
 	
 	<properties>
-		<komma.version>1.6.0-SNAPSHOT</komma.version>
+		<komma.version>1.6.3-SNAPSHOT</komma.version>
 	</properties>
 
 	<build>
@@ -46,6 +46,7 @@
 					<vmProperties>
 					</vmProperties>
 					<startLevels>
+						<net.enilink.commons.logging>0</net.enilink.commons.logging>
 						<org.eclipse.core.runtime>0</org.eclipse.core.runtime>
 						<org.eclipse.equinox.common>2</org.eclipse.equinox.common>
 						<org.apache.felix.scr>2</org.apache.felix.scr>

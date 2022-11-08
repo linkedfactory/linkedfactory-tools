@@ -3,6 +3,7 @@ package io.github.linkedfactory.aas.komma;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.enilink.composition.properties.traits.Refreshable;
 import org.eclipse.rdf4j.repository.Repository;
 import org.eclipse.rdf4j.repository.RepositoryException;
 import org.eclipse.rdf4j.repository.sail.SailRepository;
@@ -97,5 +98,18 @@ public abstract class BaseMapperTest {
 			factory.close();
 		} catch (Exception e) {
 		}
+	}
+
+	/**
+	 * Refreshes <code>target</code> if it implements the {@link Refreshable} interface.
+	 * @param target The object that should be refreshed
+	 * @param <T>
+	 * @return <code>target</code>
+	 */
+	<T> T  refresh(T target) {
+		if (target instanceof Refreshable) {
+			((Refreshable) target).refresh();
+		}
+		return target;
 	}
 }
